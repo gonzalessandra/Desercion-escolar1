@@ -1,4 +1,4 @@
-# Riesgo de deserción escolar en el Cauca — Pipeline ETL
+# Riesgo de deserción escolar en el Cauca
 
 > Pipeline que toma dos conjuntos de datos abiertos del MEN (instituciones educativas del Cauca y estadísticas educativas por municipio), los limpia, los cruza y calcula un nivel de riesgo de deserción por municipio, y los deja cargados en una base de datos SQL lista para análisis.
 
