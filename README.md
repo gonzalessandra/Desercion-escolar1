@@ -88,8 +88,8 @@ El flujo es por etapas desacopladas que se comunican a través de archivos: *ext
 
 ```bash
 # 1. Clonar el repositorio
-git clone https://github.com/[gonzalessanra]/[courseratest].git
-cd [courseratest]
+git clone https://github.com/[gonzalessanra]/[Desercion-escolar].git
+cd [Desercion-escolar]
 
 # 2. Crear y activar el entorno virtual
 python -m venv .venv
