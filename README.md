@@ -88,7 +88,7 @@ El flujo es por etapas desacopladas que se comunican a través de archivos: *ext
 
 ```bash
 # 1. Clonar el repositorio
-git clone https://github.com/[gonzalessanra]/[Desercion-escolar].git
+git clone https://github.com/[gonzalessandra]/[Desercion-escolar].git
 cd [Desercion-escolar]
 
 # 2. Crear y activar el entorno virtual
