@@ -38,8 +38,8 @@ La deserción escolar es una de las principales barreras para la permanencia en 
 
 | Fuente | Tipo (CSV, API, BD, web) | Origen / URL | Tamaño aprox. | Frecuencia de actualización | Licencia |
 |---|---|---|---|---|---|
-| Instituciones Educativas de Cauca | CSV | Datos abiertos del MEN / datos.gov.co [https://www.datos.gov.co/d/rvze-dant] | 814 filas × 24 columnas (Cauca) | [Anual] | [licencia indicada en el portal] |
-| MEN – Estadísticas en educación en preescolar, básica y media por municipio | CSV | Datos abiertos del MEN / datos.gov.co [https://www.datos.gov.co/d/sras-4t5p] |15 707 filas × 41 columnas (todo el país); 42 municipios × 41 columnas (Cauca, 2024) | [Anual] | [licencia indicada en el portal] |
+| Instituciones Educativas de Cauca | CSV | Datos abiertos del MEN / datos.gov.co [[https://www.datos.gov.co/d/rvze-dant](https://www.datos.gov.co/Educaci-n/Instituciones-Educativas-de-Cauca/rvze-dant/about_data)] | 814 filas × 24 columnas (Cauca) | [Anual] | [licencia indicada en el portal] |
+| MEN – Estadísticas en educación en preescolar, básica y media por municipio | CSV | Datos abiertos del MEN / datos.gov.co [https://www.datos.gov.co/Educaci-n/MEN_ESTADISTICAS_EN_EDUCACION_EN_PREESCOLAR-B-SICA/sras-4t5p/about_data] |15 707 filas × 41 columnas (todo el país); 42 municipios × 41 columnas (Cauca, 2024) | [Anual] | [licencia indicada en el portal] |
 
 ## 3. Arquitectura del pipeline
 
@@ -105,8 +105,8 @@ pip install -r requirements.txt
 |---|---|---|
 | `DATABASE_URL` | Base de datos destino. Vacía = SQLite local | `postgresql://etl_user:***@localhost:5432/desercion` |
 | `SQLITE_PATH` | Ruta del archivo SQLite (si no se usa `DATABASE_URL`) | `data/processed/desercion_cauca.db` |
-| `INSTITUCIONES_URL` | URL de descarga del CSV de instituciones | https://www.datos.gov.co/d/rvze-dant |
-| `ESTADISTICAS_URL` | URL de descarga del CSV de estadísticas por municipio | https://www.datos.gov.co/d/sras-4t5p |
+| `INSTITUCIONES_URL` | URL de descarga del CSV de instituciones | https://www.datos.gov.co/Educaci-n/Instituciones-Educativas-de-Cauca/rvze-dant/about_data |
+| `ESTADISTICAS_URL` | URL de descarga del CSV de estadísticas por municipio | https://www.datos.gov.co/Educaci-n/MEN_ESTADISTICAS_EN_EDUCACION_EN_PREESCOLAR-B-SICA/sras-4t5p/about_data |
 
 ### Obtención de los datos
 Los datos provienen de datos abiertos del Ministerio de Educación Nacional de Colombia, publicados en datos.gov.co: el listado de Instituciones Educativas de Cauca y las Estadísticas en educación en preescolar, básica y media por municipio. Son archivos CSV de acceso público y agregados por municipio, sin datos personales de estudiantes.
@@ -138,7 +138,7 @@ Opcional: `python docs/generar_grafico.py` regenera la gráfica de resultados `d
 
 - **Qué hace:** verifica que los dos CSV existan en `data/raw/` y valida que contengan las columnas necesarias. No modifica los datos originales.
 - **Scripts:** `extract/extract.py`
-- **Salida:** `data/raw/Instituciones_Educativas_de_Cauca.csv` y `data/raw/MEN_ESTADISTICAS_EN_EDUCACION_EN_PREESCOLAR__BÁSICA_Y_MEDIA_POR_MUNICIPIO.csv`
+- **Salida:** `data/raw/Instituciones_Educativas_de_Cauca.csv` y `data/raw/MEN_ESTADISTICAS_EN_EDUCACION_EN_PREESCOLAR__BASICA_Y_MEDIA_POR_MUNICIPIO.csv`
 
 ### 8.2 Transform
 
@@ -264,8 +264,8 @@ GROUP BY riesgo_desercion;
 ## 13. Referencias
 
 - Ministerio de Educación Nacional de Colombia, datos abiertos: https://www.mineducacion.gov.co/portal/estadisticas/datos-abiertos-men/
-- Conjuntos de datos "Instituciones Educativas de Cauca": https://www.datos.gov.co/d/rvze-dant
--  Conjuntos de datos "MEN Estadísticas en educación en preescolar, básica y media por municipio": https://www.datos.gov.co/d/sras-4t5p
+- Conjuntos de datos "Instituciones Educativas de Cauca": https://www.datos.gov.co/Educaci-n/Instituciones-Educativas-de-Cauca/rvze-dant/about_data
+-  Conjuntos de datos "MEN Estadísticas en educación en preescolar, básica y media por municipio": https://www.datos.gov.co/Educaci-n/MEN_ESTADISTICAS_EN_EDUCACION_EN_PREESCOLAR-B-SICA/sras-4t5p/about_data
 - Uso de IA generativa: se usó Claude para estructurar el repositorio a partir del notebook de la entrega 2 y el borrador de este README.
 
 
